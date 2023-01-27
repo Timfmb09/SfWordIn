@@ -45,9 +45,17 @@ class Event
     #[ORM\OneToMany(mappedBy: 'event', targetEntity: Comment::class, orphanRemoval: true)]
     private Collection $comments;
 
+    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'events')]
+    private Collection $usersAttendees;
+
+    #[ORM\ManyToOne(inversedBy: 'eventsCreated')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $usercreator = null;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
+        $this->usersAttendees = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -178,6 +186,42 @@ class Event
                 $comment->setEvent(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUsersAttendees(): Collection
+    {
+        return $this->usersAttendees;
+    }
+
+    public function addUsersAttendee(User $usersAttendee): self
+    {
+        if (!$this->usersAttendees->contains($usersAttendee)) {
+            $this->usersAttendees->add($usersAttendee);
+        }
+
+        return $this;
+    }
+
+    public function removeUsersAttendee(User $usersAttendee): self
+    {
+        $this->usersAttendees->removeElement($usersAttendee);
+
+        return $this;
+    }
+
+    public function getUsercreator(): ?User
+    {
+        return $this->usercreator;
+    }
+
+    public function setUsercreator(?User $usercreator): self
+    {
+        $this->usercreator = $usercreator;
 
         return $this;
     }

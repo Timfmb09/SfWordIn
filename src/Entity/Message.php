@@ -20,6 +20,14 @@ class Message
     #[ORM\Column(type: Types::TEXT)]
     private ?string $textMessage = null;
 
+    #[ORM\ManyToOne(inversedBy: 'messagesSend')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $userSender = null;
+
+    #[ORM\ManyToOne(inversedBy: 'messagesReceipt')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $userRecipient = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -45,6 +53,30 @@ class Message
     public function setTextMessage(string $textMessage): self
     {
         $this->textMessage = $textMessage;
+
+        return $this;
+    }
+
+    public function getUserSender(): ?User
+    {
+        return $this->userSender;
+    }
+
+    public function setUserSender(?User $userSender): self
+    {
+        $this->userSender = $userSender;
+
+        return $this;
+    }
+
+    public function getUserRecipient(): ?User
+    {
+        return $this->userRecipient;
+    }
+
+    public function setUserRecipient(?User $userRecipient): self
+    {
+        $this->userRecipient = $userRecipient;
 
         return $this;
     }

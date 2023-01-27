@@ -20,6 +20,11 @@ class Comment
     #[ORM\Column(type: Types::TEXT)]
     private ?string $contentComment = null;
 
+    #[ORM\ManyToOne(inversedBy: 'comments')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Event $event = null;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -48,4 +53,17 @@ class Comment
 
         return $this;
     }
+
+    public function getEvent(): ?Event
+    {
+        return $this->event;
+    }
+
+    public function setEvent(?Event $event): self
+    {
+        $this->event = $event;
+
+        return $this;
+    }
+
 }

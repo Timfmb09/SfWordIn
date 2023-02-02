@@ -4,4 +4,10 @@
 
 {% block body %}
     <h1>Les langues</h1>
+
+    {% for language in languages %}
+        {{language.nameLanguage}} <br>
+        
+    {% endfor %}
+
 {% endblock %}

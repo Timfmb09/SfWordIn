@@ -50,7 +50,7 @@ class Event
 
     #[ORM\ManyToOne(inversedBy: 'eventsCreated')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?User $usercreator = null;
+    private ?User $userCreator = null;
 
     public function __construct()
     {
@@ -214,14 +214,14 @@ class Event
         return $this;
     }
 
-    public function getUsercreator(): ?User
+    public function getuserCreator(): ?User
     {
-        return $this->usercreator;
+        return $this->userCreator;
     }
 
-    public function setUsercreator(?User $usercreator): self
+    public function setuserCreator(?User $userCreator): self
     {
-        $this->usercreator = $usercreator;
+        $this->userCreator = $userCreator;
 
         return $this;
     }

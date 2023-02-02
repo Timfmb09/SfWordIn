@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -43,7 +44,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\ManyToMany(targetEntity: Event::class, mappedBy: 'usersAttendees')]
     private Collection $events;
 
-    #[ORM\OneToMany(mappedBy: 'usercreator', targetEntity: Event::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'userCreator', targetEntity: Event::class, orphanRemoval: true)]
     private Collection $eventsCreated;
 
     #[ORM\OneToMany(mappedBy: 'userSender', targetEntity: Message::class, orphanRemoval: true)]
@@ -51,6 +52,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\OneToMany(mappedBy: 'userRecipient', targetEntity: Message::class, orphanRemoval: true)]
     private Collection $messagesReceipt;
+
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $dateOfBirth = null;
 
     public function __construct()
     {
@@ -224,7 +228,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if (!$this->eventsCreated->contains($eventsCreated)) {
             $this->eventsCreated->add($eventsCreated);
-            $eventsCreated->setUsercreator($this);
+            $eventsCreated->setuserCreator($this);
         }
 
         return $this;
@@ -234,8 +238,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if ($this->eventsCreated->removeElement($eventsCreated)) {
             // set the owning side to null (unless already changed)
-            if ($eventsCreated->getUsercreator() === $this) {
-                $eventsCreated->setUsercreator(null);
+            if ($eventsCreated->getuserCreator() === $this) {
+                $eventsCreated->setuserCreator(null);
             }
         }
 
@@ -298,6 +302,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $messagesReceipt->setUserRecipient(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getDateOfBirth(): ?\DateTimeInterface
+    {
+        return $this->dateOfBirth;
+    }
+
+    public function setDateOfBirth(?\DateTimeInterface $dateOfBirth): self
+    {
+        $this->dateOfBirth = $dateOfBirth;
 
         return $this;
     }

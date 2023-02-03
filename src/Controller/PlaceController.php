@@ -21,12 +21,11 @@ class PlaceController extends AbstractController
     }
 
     #[Route('/place/{id}', name: 'show_place')]
-    public function show(): Response
+    public function show(Place $place): Response
     {
-        //Récupère les lieux de la base de données
-        $places= $doctrine->getRepository(Place::class)->findBy([ ], ['namePlace' => 'asc']);
-        return $this->render('place/index.html.twig', [
-            'places' => $places,
+    
+        return $this->render('place/show.html.twig', [
+            'place' => $place,
         ]);
     }
 

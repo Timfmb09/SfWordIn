@@ -21,12 +21,12 @@ class LanguageController extends AbstractController
     }
 
     #[Route('/language/{id}', name: 'show_language')]
-    public function show(): Response
+    public function show(Language $language): Response
 
-    {   //Récupère les langues de la base de données
-        $languages = $doctrine->getRepository(Language::class)->findBy([ ], ['nameLanguage' => 'asc']);
-        return $this->render('language/index.html.twig', [
-            'languages' => $languages
+    { 
+        return $this->render('language/show.html.twig', [
+            'language' => $language
         ]);
     }
+
 }

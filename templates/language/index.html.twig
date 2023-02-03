@@ -8,7 +8,7 @@
     {% for language in languages %}
         {# {{language.nameLanguage}} <br> #}
 
-        <a href="{{ path('show_language', {'id' : language.id}) }}">{{language.nameLanguage }}</a> <br>
+        <a href="{{ path('show_language', {'id' : language.id}) }}">{{language}}</a> <br>
         
     {% endfor %}
 

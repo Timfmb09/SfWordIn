@@ -126,6 +126,6 @@ class Place
 
     public function __toString()
     {
-        return (string) $this->namePlace." ".$this->adressPlace." ".$this->cpPlace." ".$this->cityPlace." </br>".$this->descriptionPlace." ".$this->picturePlace. " ".$this->urlPlace;
+        return (string) $this->namePlace." ".$this->adressPlace." ".$this->cpPlace." ".$this->cityPlace."<br>".$this->descriptionPlace." ".$this->picturePlace. " ".$this->urlPlace;
     }
 }

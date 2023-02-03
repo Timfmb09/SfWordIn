@@ -6,7 +6,9 @@
     <h1>Les langues</h1>
 
     {% for language in languages %}
-        {{language.nameLanguage}} <br>
+        {# {{language.nameLanguage}} <br> #}
+
+        <a href="{{ path('show_language', {'id' : language.id}) }}">{{language.nameLanguage }}</a> <br>
         
     {% endfor %}
 

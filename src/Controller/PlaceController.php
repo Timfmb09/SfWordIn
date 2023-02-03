@@ -14,9 +14,21 @@ class PlaceController extends AbstractController
     public function index(ManagerRegistry $doctrine): Response
     {
         //Récupère les lieux de la base de données
-        $places= $doctrine->getRepository(Place::class)->findAll();
+        $places= $doctrine->getRepository(Place::class)->findBy([ ], ['namePlace' => 'asc']);
         return $this->render('place/index.html.twig', [
             'places' => $places,
         ]);
     }
+
+    #[Route('/place/{id}', name: 'show_place')]
+    public function show(): Response
+    {
+        //Récupère les lieux de la base de données
+        $places= $doctrine->getRepository(Place::class)->findBy([ ], ['namePlace' => 'asc']);
+        return $this->render('place/index.html.twig', [
+            'places' => $places,
+        ]);
+    }
+
+
 }

@@ -6,8 +6,10 @@
     <h1>Les lieux</h1>
 
     {% for place in places %} <br>
-        {{place}} <br>
-        
+        {# {{place | raw}} <br>  #}
+        {# {{dump(place)}} #}
+
+        <a href="{{ path('show_place', {'id' : place.id}) }}">{{place.namePlace ~ ' ' ~ place.adressPlace ~' '~ place.cpPlace ~' '~ place.cityPlace }}</a> <br>
     {% endfor %}
 
 {% endblock %}

@@ -4,20 +4,17 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+            <script src="https://kit.fontawesome.com/45e38e596f.js" crossorigin="anonymous"></script>
         {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
     </head>
     <body>
 
         <nav>
             <ul>
-                <li><a href="{{ path('app_home') }}"></a>Accueil</li>
+                <li><a href="{{ path('app_home') }}">Accueil</a></li>
                 <li><a href="{{ path('app_place') }}">Les lieux</a></li>
                 <li><a href="{{ path('app_language') }}">Les langues</a></li>
                 <li><a href="{{ path('app_event') }}">Les évènements</a></li>
@@ -38,6 +35,10 @@
 
 
         {% block body %}
+        {% endblock %}
+
+        {% block javascripts %}
+        
         {% endblock %}
 
     </body>

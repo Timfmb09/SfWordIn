@@ -1,8 +1,4 @@
-@media (min-width: 768px) {
-    body {
-      color: red;
-    }
-  } 
+
 
 * {
   margin: 0;
@@ -11,8 +7,14 @@
 }
 
 body{
-    background-color: rgb(155, 155, 164);
+    background-color: rgb(27, 5, 12);
     
+}
+
+h1{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(50, 25, 212);
 }
 
 header{

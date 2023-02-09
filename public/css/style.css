@@ -1,6 +1,6 @@
 @media (min-width: 768px) {
     body {
-      color: rgb(60, 255, 0);
+      color: rgb(28, 24, 165);
     }
   } 
   
@@ -12,6 +12,10 @@
   
   body{
     background-color: rgb(139, 15, 15);
+  }
+
+  nav a{
+
   }
   
   header{

@@ -16,7 +16,9 @@ class EventType extends AbstractType
     {
         $builder
             ->add('nameEvent', TextType::class)
-            ->add('dateHourEvent', DateType::class)
+            ->add('dateHourEvent', DateType::class, [
+                'widget' => 'single_text' 
+                ])
             ->add('maxNbRegistrantEvent', TextType::class)
             ->add('descriptionGameEvent', TextType::class)
             ->add('pictureEvent', TextType::class)

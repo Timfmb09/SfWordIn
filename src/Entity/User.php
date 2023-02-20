@@ -44,7 +44,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\ManyToMany(targetEntity: Event::class, mappedBy: 'usersAttendees')]
     private Collection $events;
 
-    #[ORM\OneToMany(mappedBy: 'ceator', targetEntity: Event::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'creator', targetEntity: Event::class, orphanRemoval: true)]
     private Collection $eventsCreated;
 
     #[ORM\OneToMany(mappedBy: 'userSender', targetEntity: Message::class, orphanRemoval: true)]

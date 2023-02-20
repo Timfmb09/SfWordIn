@@ -8,7 +8,9 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
 class EventType extends AbstractType
 {
@@ -19,14 +21,14 @@ class EventType extends AbstractType
             ->add('dateHourEvent', DateType::class, [
                 'widget' => 'single_text' 
                 ])
-            ->add('maxNbRegistrantEvent', TextType::class)
-            ->add('descriptionGameEvent', TextType::class)
-            ->add('pictureEvent', TextType::class)
-            ->add('durationEvent', TextType::class)
+            ->add('durationEvent', TimeType::class)
             ->add('place', TextType::class)
+            ->add('maxNbRegistrantEvent', IntegerType::class)
             ->add('language', TextType::class)
+            ->add('descriptionGameEvent', TextType::class)
             ->add('usersAttendees', TextType::class)
-            ->add('userCreator', TextType::class)
+            ->add('userCreator', IntegerType::class)
+            ->add('pictureEvent', TextType::class)
             ->add('submit', SubmitType::class)
 
         ;

@@ -6,4 +6,10 @@
 
     <h1>Les évènements</h1>   
 
+    <a href="{{ path('add_event') }}">Créer un évènement</a><br>    
+
+    {% for event in events %}
+        <a href="{{ path('show_event', {'id': event.id}) }}">{{ event }}</a><br>        
+    {% endfor %}
+
 {% endblock %}

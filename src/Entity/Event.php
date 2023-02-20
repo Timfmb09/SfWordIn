@@ -228,6 +228,6 @@ class Event
 
     public function __toString()
     {
-        return (string) $this->nameEvent." ".$this->dateHourEvent." ".$this->durationEvent." ".$this->MaxNbRegistrantEvent." ".$this->descriptionGmeEvent." ".$this->userCreator." ".$this->usersAttendees;
+        return $this->nameEvent." ".$this->dateHourEvent->format('d/m/Y')." ".$this->durationEvent->format('H:i:s')." ".$this->maxNbRegistrantEvent." ".$this->descriptionGameEvent." ".$this->userCreator." ".$this->usersAttendees;
     }
 }

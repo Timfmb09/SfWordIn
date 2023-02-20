@@ -50,6 +50,6 @@ class Language
     
     public function __toString()
     {
-        return (string) $this->nameLanguage." ".$this->pictureLanguage;
+        return $this->nameLanguage." ".$this->pictureLanguage;
     }
 }

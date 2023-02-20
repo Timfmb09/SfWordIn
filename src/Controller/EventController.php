@@ -3,11 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Event;
+use App\Form\EventType;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 
 class EventController extends AbstractController
 {
@@ -27,16 +28,21 @@ class EventController extends AbstractController
         $form = $this->createForm(EventType::class, $event);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $event = $doctrine->getManager();
-            $event->persist($event);
-            $event->flush();
+        if($form->isSubmitted() && $form->isValid()) {
 
-            return $this->redirectToRoute('app_event_index');
+            $event = $form->getData();
+            $entityManager = $doctrine->getManager();
+            //prepare
+            $entityManager->persist($event);
+            //insert into (execute)
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_event');
         }
 
         //Vue pour afficher le formulaire d'ajout d'un évènement
         return $this->render('event/add.html.twig', [
+            'formAddEvent' => $form->createView()
         ]);
 
     }

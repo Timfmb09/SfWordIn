@@ -11,7 +11,7 @@
 }
   
 body{
-  background-color: rgb(141, 222, 128);
+  background-color: rgb(189, 197, 220);
 }
 
 ul {
@@ -56,7 +56,7 @@ h1{
 
 .btn{
     display: inline-block;
-    background-color: #7b38d8;
+    background-color: #383bd8;
     border-radius: 10px;
     border: 4px double #cccccc;
     color: #eeeeee;

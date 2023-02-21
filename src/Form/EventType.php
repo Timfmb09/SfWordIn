@@ -27,7 +27,12 @@ class EventType extends AbstractType
                 'widget' => 'single_text' 
                 ])
                 
-            ->add('durationEvent', TimeType::class)
+            ->add('durationEvent', TimeType::class,[ 
+                'placeholder' => [
+                'hour' => 'Hour', 
+                'minute' => 'Minute',
+                ]
+                ])
 
             ->add('place', EntityType::class,[
                 'class' => Place::class,

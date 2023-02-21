@@ -6,15 +6,15 @@
     <h1>Détail de l'évènement sélectionné</h1>
 <p>
     Nom de l'évènement : {{event.nameEvent}} <br> 
-    Date et heure de l'évènement : {{event.dateHourEvent}} <br> 
-    Durée de l'évènement : {{event.durationEvent}} <br> 
-    Adresse de l'évènement : {{event.placeEvent}} <br> 
-    Nom de l'évènement : {{event.maxNbRegistrantEvent}} <br> 
-    Nom de l'évènement : {{event.languageEvent}} <br> 
-    Information complémentaire sur l'évènement : {{event.descriptionGameEvent}}
-    {# Nom de l'évènement : {{event.usersAttendees}} <br>  #}
-    {# Nom de l'évènement : {{event.userCreator}} <br>  #}
-    Nom de l'évènement : {{event.pictureEvent}} <br> 
+    Date de l'évènement : {{event.dateHourEvent| date('d-m-Y') }} <br>
+    Durée de l'évènement : {{event.durationEvent|  date('h:i')}} <br> 
+    Nom et adresse du lieu : {{event.place}} <br> 
+    Nombre maximum de participant souhaité : {{event.maxNbRegistrantEvent}} <br> 
+    Langue choisie pour l'évènement : {{event.language}} <br> 
+    Information complémentaire sur l'évènement : {{event.descriptionGameEvent}}<br>
+    {# Nombre de participant : {{event.usersAttendees}} <br>  
+    Nom de l'auteur : {{event.userCreator}} <br>   #}
+    Photo de l'évènement : {{event.pictureEvent}} <br>  
 
 </p>
     

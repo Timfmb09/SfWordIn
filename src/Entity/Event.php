@@ -49,7 +49,7 @@ class Event
     private Collection $usersAttendees;
 
     #[ORM\ManyToOne(inversedBy: 'eventsCreated')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?User $userCreator = null;
 
     public function __construct()
@@ -226,8 +226,8 @@ class Event
         return $this;
     }
 
-    public function __toString()
-    {
-        return $this->nameEvent." ".$this->dateHourEvent." ".$this->durationEvent." ".$this->maxNbRegistrantEvent." ".$this->descriptionGameEvent." ".$this->userCreator." ".$this->usersAttendees;
-    }
+    // public function __toString()
+    // {
+    //     return $this->nameEvent." ".$this->dateHourEvent." ".$this->durationEvent." ".$this->maxNbRegistrantEvent." ".$this->descriptionGameEvent." ".$this->userCreator." ".$this->usersAttendees;
+    // }
 }

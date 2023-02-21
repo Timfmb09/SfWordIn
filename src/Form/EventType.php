@@ -2,9 +2,13 @@
 
 namespace App\Form;
 
+use App\Entity\User;
 use App\Entity\Event;
+use App\Entity\Place;
+use App\Entity\Language;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -18,19 +22,39 @@ class EventType extends AbstractType
     {
         $builder
             ->add('nameEvent', TextType::class)
+
             ->add('dateHourEvent', DateType::class, [
                 'widget' => 'single_text' 
                 ])
+                
             ->add('durationEvent', TimeType::class)
-            ->add('place', TextType::class)
-            ->add('maxNbRegistrantEvent', IntegerType::class)
-            ->add('language', TextType::class)
-            ->add('descriptionGameEvent', TextType::class)
-            ->add('usersAttendees', TextType::class)
-            ->add('userCreator', IntegerType::class)
-            ->add('pictureEvent', TextType::class)
-            ->add('submit', SubmitType::class)
 
+            ->add('place', EntityType::class,[
+                'class' => Place::class,
+                'choice_label' => 'namePlace',
+                'placeholder' => 'lieu'
+                ])
+            ->add('maxNbRegistrantEvent', IntegerType::class,[ 
+                'attr' => array('min' => 0, 'max' =>6)
+                ])
+            
+            ->add('language', EntityType::class,[
+                'class' => Language::class,
+                'choice_label' => 'nameLanguage',
+                'placeholder' => 'langue'
+                ])           
+            ->add('descriptionGameEvent', TextType::class)
+            // ->add('usersAttendees', TextType::class)
+
+            // ->add('userCreator', TextType::class,[
+            //     'class' => User::class,
+            //     'choice_label' => 'pseudo',
+            //     'placeholder' => 'auteur'
+            //     ])
+            // ->add('pictureEvent', TextType::class)
+            ->add('submit', SubmitType::class,[
+                'attr' => ['class' => 'btn']
+                ])
         ;
     }
 

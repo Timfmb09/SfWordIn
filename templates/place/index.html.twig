@@ -8,8 +8,9 @@
     {% for place in places %} <br>
         {# {{place | raw}} <br>  #}
         {# {{dump(place)}} #}
-
+        <p>
         <a href="{{ path('show_place', {'id' : place.id}) }}">{{place.namePlace ~ ' ' ~ place.adressPlace ~' '~ place.cpPlace ~' '~ place.cityPlace }}</a> <br>
+        </p>
     {% endfor %}
 
 {% endblock %}

@@ -15,13 +15,16 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class EventType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nameEvent', TextType::class)
+            ->add('nameEvent', TextType::class,[
+                
+                ])
 
             ->add('dateHourEvent', DateType::class, [
                 'widget' => 'single_text' 
@@ -29,7 +32,7 @@ class EventType extends AbstractType
                 
             ->add('durationEvent', TimeType::class,[ 
                 'placeholder' => [
-                'hour' => 'Hour', 
+                'hour' => 'Heure', 
                 'minute' => 'Minute',
                 ]
                 ])
@@ -48,7 +51,7 @@ class EventType extends AbstractType
                 'choice_label' => 'nameLanguage',
                 'placeholder' => 'langue'
                 ])           
-            ->add('descriptionGameEvent', TextType::class)
+            ->add('descriptionGameEvent', TextareaType::class)
             // ->add('usersAttendees', TextType::class)
 
             // ->add('userCreator', TextType::class,[

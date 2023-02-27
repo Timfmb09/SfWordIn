@@ -10,6 +10,20 @@
     <h1>Créer un évènement</h1>
     {% endif %}
     
-    {{form(formAddEvent)}}
+    {# {{form(formAddEvent)}} #}
 
+    {{ form_start(formAddEvent) }}
+    {# {{ form_errors(form) }} #}
+   
+    {{ form_row(formAddEvent.nameEvent) }}
+    {{ form_row(formAddEvent.dateHourEvent) }}
+    {{ form_row(formAddEvent.durationEvent) }}
+    {{ form_row(formAddEvent.place) }}
+    {{ form_row(formAddEvent.maxNbRegistrantEvent) }}
+    {{ form_row(formAddEvent.language) }}
+    {{ form_row(formAddEvent.descriptionGameEvent) }}
+    {{ form_row(formAddEvent.valider, { 'label': 'Valider' }) }}
+    {{ form_end(formAddEvent) }}
+    
 {% endblock %}
+

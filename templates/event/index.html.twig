@@ -5,13 +5,14 @@
 {% block body %}
 
     <h1>Les évènements</h1>   
-
+    <p>
     <a class='btn' href="{{ path('add_event') }}">Créer un évènement</a><br>    
 
     {% for event in events %}
         <a href="{{ path('show_event', {'id': event.id}) }}">{{ event.nameEvent }}</a><br> 
-        <a class='btn1' href="{{ path('edit_event', {'id': event.id}) }}">Editer</a>   
-        <a class='btn2' href="{{ path('delete_event', {'id': event.id}) }}">Supprimer</a>
+        <a class='btn' href="{{ path('edit_event', {'id': event.id}) }}">Editer</a>   
+        <a class='btn' href="{{ path('delete_event', {'id': event.id}) }}">Supprimer</a>
     {% endfor %}
+    </p>
 
 {% endblock %}

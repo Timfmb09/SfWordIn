@@ -4,7 +4,8 @@
 
 {% block body %}
     <h1>Détail de : {{event.nameEvent}}</h1>
-<p>
+   
+    <p>
     Nom : {{event.nameEvent}} <br> 
     Date : {{event.dateHourEvent| date('d-m-Y') }} <br>
     Durée : {{event.durationEvent|  date('h:i')}} <br> 
@@ -16,8 +17,7 @@
     Nom de l'auteur : {{event.userCreator}} <br>   #}
     {# Photo de l'évènement : {{event.pictureEvent}} <br>   #}
     <a class='btn' href="">S'inscrire</a>
-
-</p>
-    
+    </p>
+  
 
 {% endblock %}

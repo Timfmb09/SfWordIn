@@ -11,7 +11,7 @@
 }
   
 body{
-  background-color: rgb(221, 222, 239);
+  background-color: white;
 }
 
 ul {
@@ -55,6 +55,16 @@ h1 {
   text-align: center;
 }
 
+p{
+  background-color:rgb(221, 220, 220);
+  padding:10px;
+  border-radius: 8px;
+  width: 500px;
+  text-align: center;
+  margin-left: 33%;
+
+}
+
 .btn{
     background-color: #4091e7; 
     border: none;
@@ -65,27 +75,36 @@ h1 {
     display: inline-block;
     font-size: 15px;
     border-radius: 8px;
-}
-  
-.btn1{
-  background-color: #1f9f52; 
-  border: none;
-  color: white;
-  padding: 5px 10px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  border-radius: 8px;
+    margin-top: 15px;
+
 }
 
-.btn2{
-  background-color: #e82222; 
-  border: none;
-  color: white;
-  padding: 5px 10px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
+form {
+  background-color:rgb(221, 220, 220);
+  padding:10px;
   border-radius: 8px;
+  width: 500px;
+  text-align: center;
+  margin-left: 33%;
 }
+
+
+label {
+  margin-top:10px;
+  display:inline-block;
+}
+
+input, textarea, select {
+  background-color: white;
+  padding:3px;
+  border:1px solid #b2c1df;
+  border-radius:5px;
+  width:200px;
+  box-shadow:1px 1px 2px #C0C0C0 inset;  
+  margin-top:10px;
+  margin-left: 5px;
+}
+
+
+
 

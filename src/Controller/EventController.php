@@ -47,7 +47,8 @@ class EventController extends AbstractController
 
         //Vue pour afficher le formulaire d'ajout d'un évènement
         return $this->render('event/add.html.twig', [
-            'formAddEvent' => $form->createView()
+            'formAddEvent' => $form->createView(),
+            'edit' => $event->getId()
         ]);
 
     }

@@ -4,8 +4,12 @@
 
 {% block body %}
 
-    <h1>Créer un évènement</h1>   
-
+    {% if edit %}
+        <h1>Editer un évènement</h1>   
+    {% else %}
+    <h1>Ajouter un évènement</h1>
+    {% endif %}
+    
     {{form(formAddEvent)}}
 
 {% endblock %}

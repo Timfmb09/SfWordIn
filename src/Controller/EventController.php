@@ -23,8 +23,13 @@ class EventController extends AbstractController
     }
 
     #[Route('/event/add', name: 'add_event')]
+    #[Route('/event/{id}edit', name: 'edit_event')]
     public function add(ManagerRegistry $doctrine, Event $event = null, Request $request): Response
-    {
+    {   
+        if(!$event){
+            $event = new Event();
+        }
+
         $form = $this->createForm(EventType::class, $event);
         $form->handleRequest($request);
 
@@ -46,6 +51,21 @@ class EventController extends AbstractController
         ]);
 
     }
+
+
+    #[Route('/event/{id}/delete', name: 'delete_event')]
+    public function delete(ManagerRegistry $doctrine, Event $event ): Response
+    {   
+            $entityManager = $doctrine->getManager();
+            //prepare
+            $entityManager->remove($event);
+            //insert into (execute)
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_event');
+        }
+
+    
 
     #[Route('/event/{id}', name: 'show_event')]
     public function show(Event $event): Response

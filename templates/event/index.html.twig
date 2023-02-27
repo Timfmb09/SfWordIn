@@ -9,7 +9,9 @@
     <a href="{{ path('add_event') }}">Créer un évènement</a><br>    
 
     {% for event in events %}
-        <a href="{{ path('show_event', {'id': event.id}) }}">{{ event.nameEvent }}</a><br>        
+        <a href="{{ path('show_event', {'id': event.id}) }}">{{ event.nameEvent }}</a><br> 
+        <a class='btn' href="{{ path('edit_event', {'id': event.id}) }}">Editer un évènement</a>   
+        <a class='btn' href="{{ path('delete_event', {'id': event.id}) }}">Supprimer un évènement</a>
     {% endfor %}
 
 {% endblock %}

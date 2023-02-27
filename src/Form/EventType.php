@@ -57,7 +57,7 @@ class EventType extends AbstractType
             //     'placeholder' => 'auteur'
             //     ])
             // ->add('pictureEvent', TextType::class)
-            ->add('submit', SubmitType::class,[
+            ->add('valider', SubmitType::class,[
                 'attr' => ['class' => 'btn']
                 ])
         ;

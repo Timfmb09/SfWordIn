@@ -1,7 +1,7 @@
 /* ALL */
 @media (min-width: 768px) {
     body {
-      color: rgb(228, 11, 25);
+      color: rgb(78, 32, 207);
     }
   } 
  
@@ -114,7 +114,7 @@
 .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
 .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
   top: 0;
-}
+} 
 
 /* 48em = 768px */
 
@@ -134,51 +134,48 @@
     display: none;
   }
 }
-
-/* nav{
+#title {
+  height: 30vh;
+  width: 100%;
   display: flex;
-  height: 10vh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+#title figure{
+  height: 100%;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+#title figure img{
+  width: 250%;
+  height: 250%;
+  object-fit: cover;
+}
+nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+nav ul {
   width: 100%;
 }
-
-nav figure{
-    height: 100%;
-    width: 20%;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-nav figure img{
-    object-fit: contain;
-    height: 150px;
-    width: 150px;
-}
-
-nav ul{
-  font-size: .9em;
-  width: 80%;
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
-
-}
-
 nav ul li{
-  float:inline-start;
+  list-style: none;
 }
-
 nav ul li a{
-  color: rgb(14, 13, 13);
-  transition: .2s;
+  color: #07195f;
+  transition: .6s;
   text-decoration: none;
 }
-  
 /* Change the link color to #111 (black) on hover */
-/* li a:hover{
+li a:hover{
   background-color: white;
-} */ 
+  color: #07195f;
+}  
     
 img{
   height: 100%;
@@ -189,6 +186,11 @@ img{
 h1{
 	text-shadow: 2px 4px 3px rgba(8, 8, 8, 0.3);
   text-align: center;
+  
+}
+
+h3{
+  
 }
 
 p{

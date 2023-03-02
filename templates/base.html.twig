@@ -7,7 +7,7 @@
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 
         {# Bootstrap link #}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+        {# <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"> #}
 
         {% block stylesheets %}
             {# it's in public folder that we find all our public files like css/ js/ ... #}
@@ -18,33 +18,39 @@
 
     <body>
 
-        <nav> 
         <header class="header">
-             <figure>
+        <div id="title">
+            <figure>
                 <img class='logo' src="{{ asset('img/logoWordIn.png')}}" alt="Logo WordIn">
-             </figure>
-             <input class="menu-btn" type="checkbox" id="menu-btn" />
-             <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-            <ul class="menu">
-                <li><a href="{{ path('app_home') }}">Accueil</a></li>
-                <li><a href="{{ path('app_place') }}">Lieux</a></li>
-                <li><a href="{{ path('app_language') }}">Langues</a></li>
-                <li><a href="{{ path('app_event') }}">Évènements</a></li>
+            </figure>
+            <div id="title-text">
+                <h1>WordIn Alsace</h1>
+                <h3>Apprendre une langue en s'amusant!</h3>
+            </div>
+        </div>
+            <nav>
+                <input class="menu-btn" type="checkbox" id="menu-btn" />
+                <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+                <ul class="menu">
+                    <li><a href="{{ path('app_home') }}">Accueil</a></li>
+                    <li><a href="{{ path('app_place') }}">Lieux</a></li>
+                    <li><a href="{{ path('app_language') }}">Langues</a></li>
+                    <li><a href="{{ path('app_event') }}">Évènements</a></li>
 
-                {% if app.user %}
-                <li><a href="{{ path('app_logout') }}"> Se déconnecter</a></li>
-                 <li><a href="">Mon profil</a>
-                {% else %}
-                <li><a href="{{ path('app_login') }}"> Se connecter</a></li> 
-                <li><a href="{{ path('app_register') }}"> S'enregistrer</a></li>
-                {% endif %}
+                    {% if app.user %}
+                    <li><a href="{{ path('app_logout') }}"> Se déconnecter</a></li>
+                    <li><a href="">Mon profil</a>
+                    {% else %}
+                    <li><a href="{{ path('app_login') }}"> Se connecter</a></li> 
+                    <li><a href="{{ path('app_register') }}"> S'enregistrer</a></li>
+                    {% endif %}
 
-                {% if is_granted("ROLE_ADMIN") %}
-                    <li><a href="">PANNEAU D'ADMINISTRATION</a></li>
-                {% endif %}
-            </ul>
-            </header>
-         </nav>
+                    {% if is_granted("ROLE_ADMIN") %}
+                        <li><a href="">PANNEAU D'ADMINISTRATION</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </header>
 
         {% block body %}
         {% endblock %}

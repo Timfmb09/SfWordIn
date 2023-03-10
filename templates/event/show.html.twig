@@ -3,7 +3,16 @@
 {% block title %}Détail de l'évènement{% endblock %}
 
 {% block body %}
-    <h1>Détail de : {{event.nameEvent}}</h1>
+    <h1>Les évènements</h1>   
+
+    <p>Tous les évènements sont limités à 6 personnes<br> 
+    Vous avez la possibilité de réserver, vous inscrire, mofdifier et annuler un évènement jusqu'à la veille.
+    <br> 
+    <br> 
+    Pour la création d'un évènement il suffit de choisir une date, une heure, une durée,<br> 
+    un lieu, un jeu, une langue et le nombre maximum d'inscription souhaité.</p>
+
+    <h1>Détail de l'évènement : {{event.nameEvent}}</h1>
    
     <p>
     Nom : {{event.nameEvent}} <br> 
@@ -16,7 +25,7 @@
     {# Nombre de participant : {{event.usersAttendees}} <br>  
     Nom de l'auteur : {{event.userCreator}} <br>   #}
     {# Photo de l'évènement : {{event.pictureEvent}} <br>   #}
-    <a class='btn' href="">S'inscrire</a>
+    {# <a class='btn' href="">S'inscrire</a> #}
     </p>
   
 

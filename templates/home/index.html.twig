@@ -13,47 +13,50 @@
     Tu peux créer un évènement en choisissant un lieu, une langue, un jeu, une date et une durée ou t'inscrire sur un déjà planifier!</p>
   
 
-    <h1>Les évènements</h1>
+        <h1>Les évènements</h1>
+    <div class='calendar'>
     <figure>
-        <img src="{{ asset('img/calendrier.jpg')}}" alt="Image d'un calendrier cliquable">
+        <a href="{{ path('app_event') }}" ><img src="{{ asset('img/calendrier.jpg')}}" alt="Image d'un calendrier cliquable"></a>
     </figure>
-    <h1>Les lieux</h1>
+    </div>
+
+        <h1>Les lieux</h1>
+    <div class='place'>
     <figure>
         <img src="{{ asset('img/lartichaut.jpeg')}}" alt="Image façade café L'artichaut">
     </figure> 
     <figure>
         <img src="{{ asset('img/philibar.jpg')}}" alt="Image façade café Philibar">
     </figure> 
-  
     <figure>
         <img src="{{ asset('img/wxyz.jpg')}}" alt="Image façade café Wxyz">
     </figure>
+    </div>
 
-
-    <h1>Les langues</h1>
-    <figure>
-        <img src="{{ asset('img/.jpg')}}" alt="Drapeau anglais">
-    </figure>
-    <h1>Les lieux</h1>
-    <figure>
-        <img src="{{ asset('img/.jpeg')}}" alt="Drapeau allemand">
-    </figure> 
-    <figure>
-        <img src="{{ asset('img/.jpg')}}" alt="Drapeau langue des signes">
-    </figure> 
-    <figure>
-        <img src="{{ asset('img/.jpg')}}" alt="Drapeau programmation">
-    </figure>
-   <figure>
-        <img src="{{ asset('img/.jpeg')}}" alt="Drapeau chinois">
-    </figure> 
-    <figure>
-        <img src="{{ asset('img/.jpg')}}" alt="Drapeau langue des signes">
-    </figure> 
-    <figure>
-        <img src="{{ asset('img/.jpg')}}" alt="Drapeau programmation">
-    </figure>
-
+        <h1>Les langues</h1>
+    <div class='drapeau'>
+        <figure>
+            <img class='drapeau' src="{{ asset('img/france.jpeg')}}" alt="Drapeau français">
+        </figure>
+        <figure>
+            <img class='drapeau' src="{{ asset('img/anglais.jpeg')}}" alt="Drapeau anglais">
+        </figure> 
+        <figure>
+            <img class='drapeau' src="{{ asset('img/lds.png')}}" alt="Drapeau langue des signes">
+        </figure> 
+        <figure>
+            <img class='drapeau' src="{{ asset('img/programmation.jpeg')}}" alt="Drapeau programmation">
+        </figure>
+        <figure>
+            <img class='drapeau' src="{{ asset('img/allemand.jpeg')}}" alt="Drapeau allemand">
+        </figure> 
+        <figure>
+            <img class='drapeau' src="{{ asset('img/espagnol.jpeg')}}" alt="Drapeau espagnol">
+        </figure> 
+        <figure>
+            <img class='drapeau' src="{{ asset('img/italien.png')}}" alt="Drapeau italien">
+        </figure>
+    </div>
 
 
 <main>

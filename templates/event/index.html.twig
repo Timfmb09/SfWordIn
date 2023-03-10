@@ -5,14 +5,33 @@
 {% block body %}
 
     <h1>Les évènements</h1>   
-    <p>
-    <a class='btn' href="{{ path('add_event') }}">Créer un évènement</a><br>    
 
+    <p>Tous les évènements sont limités à 6 personnes<br> 
+    Vous avez la possibilité de réserver, vous inscrire, mofdifier et annuler un évènement jusqu'à la veille.
+    <br> 
+    <br> 
+    Pour la création d'un évènement il suffit de choisir une date, une heure, une durée,<br> 
+    un lieu, un jeu, une langue et le nombre maximum d'inscription souhaité.</p>
+
+    <h1>Liste des événements à venir</h1>
+
+
+    <p>Cliquez sur une date pour voir la liste des événements.</p><br>
+    
+    <p>
     {% for event in events %}
         <a href="{{ path('show_event', {'id': event.id}) }}">{{ event.nameEvent }}</a><br> 
         <a class='btn' href="{{ path('edit_event', {'id': event.id}) }}">Editer</a>   
         <a class='btn' href="{{ path('delete_event', {'id': event.id}) }}">Supprimer</a>
+        {# <a class='btn' href="{{ path('subscribe_event', {'id': event.id}) }}">S'inscrire'</a> #}
     {% endfor %}
     </p>
+
+    <p>
+        <a class='btn' href="{{ path('add_event') }}">Créer un évènement</a><br>  
+    </p>
+
+
+
 
 {% endblock %}

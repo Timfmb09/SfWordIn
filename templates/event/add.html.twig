@@ -4,8 +4,18 @@
 
 {% block body %}
 
+    <h1>Les évènements</h1>   
+
+    <p>Tous les évènements sont limités à 6 personnes<br> 
+    Vous avez la possibilité de réserver, vous inscrire, mofdifier et annuler un évènement jusqu'à la veille.
+    <br> 
+    <br> 
+    Pour la création d'un évènement il suffit de choisir une date, une heure, une durée,<br> 
+    un lieu, un jeu, une langue et le nombre maximum d'inscription souhaité.</p>
+
+
     {% if edit %}
-    <h1>Edition de l'évènement</h1>   
+    <h1>Modifier un évènement</h1>   
     {% else %}
     <h1>Créer un évènement</h1>
     {% endif %}
@@ -22,7 +32,7 @@
     {{ form_row(formAddEvent.maxNbRegistrantEvent) }}
     {{ form_row(formAddEvent.language) }}
     {{ form_row(formAddEvent.descriptionGameEvent) }}
-    {{ form_row(formAddEvent.valider, { 'label': 'Valider' }) }}
+    {{ form_row(formAddEvent.valider, { 'label': 'Valider' }) }} 
     {{ form_end(formAddEvent) }}
     
 {% endblock %}

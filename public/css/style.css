@@ -1,23 +1,24 @@
-/* ALL */
-@media (min-width: 768px) {
-    body {
-      color: black;
-    }
-  } 
- 
+
 @import url('https://fonts.googleapis.com/css?family=Poppins:wght@100;400;700;800;900&display=swap');
 * {
   margin: 0;
   padding: 0;
   font-family: 'Poppins' , sans-serif;
+  text-decoration: none;
+  list-style: none;
 }
 
+@media (min-width: 768px) {
+  body {
+    color: rgb(9, 26, 108);
+  }
+} 
+
+/* HEADER  */
 header{
   width: 100%;
   height: 100%;
 }
-
-/* HEADER  */
 
 .header figure.logo {
   display: flex;
@@ -26,16 +27,33 @@ header{
   padding: 1px 2px;
   text-decoration: none;
 }
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
 .header li a {
   display: block;
   padding: 20px 20px;
   border-right: 1px solid #f4f4f4;
+  text-decoration: none;
+  width: 100%;
+  color: #07195f;
+  transition: .6s;
   text-decoration: none;
 }
 
 .header li a:hover,
 .header .menu-btn:hover {
   background-color: #f4f4f4;
+  color: #07195f;
 }
 
 /* menu */
@@ -49,12 +67,12 @@ header{
 /* menu icon */
 
 .header .menu-icon {
-  /* cursor: pointer; */
-  /* display: block; */
-  /* float: right; */
+  cursor: pointer; 
+  display: inline-block; 
+  float: right; 
   padding: 28px 20px;
-  /* position: relative; */
-  /* user-select: none; */
+  position: relative; 
+  user-select: none; 
 }
 
 .header .menu-icon .navicon {
@@ -92,7 +110,7 @@ header{
 }
 
 .header .menu-btn:checked ~ .menu {
-  max-height: 540px;
+  max-height: 370px;
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon {
@@ -130,6 +148,8 @@ header{
     display: none;
   }
 }
+
+
 #title {
   height: 30vh;
   width: 100%;
@@ -151,40 +171,49 @@ header{
   height: 250%;
   object-fit: cover;
 }
-nav {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-nav ul {
-  width: 100%;
-}
-nav ul li{
-  list-style: none;
-}
-nav ul li a{
-  color: #07195f;
-  transition: .6s;
-  text-decoration: none;
-}
-/* Change the link color to #111 (black) on hover */
-li a:hover{
-  background-color: white;
-  color: #07195f;
-}  
-    
+
 img{
   height: 80%;
   width: 80%;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /* object-fit: cover; */
+  object-fit: cover;
+  padding-bottom: 10%;
+  padding-top: 5%;
+}
+
+.place{
+  height: 50%;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+}
+
+.calendar{
+  height: 50%;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+}
+
+.drapeau{
+  height: 50%;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
 }
 
 h1{
 	text-shadow: 2px 4px 3px rgba(8, 8, 8, 0.3);
   text-align: center;
+  padding-top: 8%;
   
 }
 
@@ -195,11 +224,13 @@ h3{
 p{
   background-color:rgb(221, 220, 220);
   padding:10px;
-  
-  
-  width: 500px;
   text-align: center;
-  margin-left: 33%;
+  height: 50%;
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
 
 }
 
@@ -252,7 +283,3 @@ input, textarea, select {
   margin-right: auto;
 
 } 
-
-
-
-

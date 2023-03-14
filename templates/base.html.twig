@@ -19,18 +19,18 @@
     <body>
 
         <header class="header">
-        <div id="title">
-            <figure>
-                <img class='logo' src="{{ asset('img/logoWordIn.png')}}" alt="Logo WordIn">
-            </figure>
-            <div id="title-text">
-                <h1>WordIn Alsace</h1>
-                <h3>Apprendre une langue en s'amusant!</h3>
-            </div>
-        </div>
-            <nav>
+                <div id="title">
+                    <figure>
+                        <img class='logo' src="{{ asset('img/logoWordIn.png')}}" alt="Logo WordIn">
+                    </figure>
+                    <div id="title-text">
+                        <h1>WordIn Alsace</h1>
+                        <h3>Apprendre une langue en s'amusant!</h3>
+                    </div>
+                </div>
                 <input class="menu-btn" type="checkbox" id="menu-btn" />
                 <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+                
                 <ul class="menu">
                     <li><a href="{{ path('app_home') }}">Accueil</a></li>
                     <li><a href="{{ path('app_place') }}">Lieux</a></li>
@@ -46,10 +46,9 @@
                     {% endif %}
 
                     {% if is_granted("ROLE_ADMIN") %}
-                        <li><a href="">PANNEAU D'ADMINISTRATION</a></li>
+                    <li><a href="">PANNEAU D'ADMINISTRATION</a></li>
                     {% endif %}
-                </ul>
-            </nav>
+                </ul>   
         </header>
 
         {% block body %}

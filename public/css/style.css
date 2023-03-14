@@ -172,6 +172,7 @@ header{
   object-fit: cover;
 }
 
+
 img{
   height: 80%;
   width: 80%;
@@ -184,12 +185,13 @@ img{
 }
 
 .place{
-  height: 50%;
-  width: 50%;
-  display: block;
+  height: 100%;
+  width: 100%;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
   object-fit: cover;
+
 }
 
 .calendar{
@@ -204,17 +206,14 @@ img{
 .drapeau{
   height: 50%;
   width: 50%;
-  display: block;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
-  object-fit: cover;
 }
 
 h1{
-	text-shadow: 2px 4px 3px rgba(8, 8, 8, 0.3);
   text-align: center;
-  padding-top: 8%;
-  
+  padding-top: 5%;
 }
 
 h3{
@@ -273,13 +272,36 @@ input, textarea, select {
   margin-top:10px;
   margin-left: 5px;
 }
+.figure{
+padding-right: 50%;
+
+}
 
 .drapeau figure img{
-  height: 130px;
-  width: 130px;
-  display: block;
+  height: 100px;
+  width: 100px;
   border-radius: 100px;
-  margin-left: auto;
-  margin-right: auto;
-
+  -webkit-margin-before:1em;
+  -webkit-margin-after:1em;
+  display: flex;
 } 
+
+figcaption {
+  /* float: right; */
+  width: 30%;
+  text-align: center;
+  font-style: italic;
+  font-size: smaller;
+  text-indent: 0;
+  border: thin silver solid;
+  margin: 0.5em;
+  padding: 0.5em;
+ /
+}
+
+@media screen and (max-width: 900px) {
+  /* taille max pour l'image */
+  img 	{ width : 100% ;}
+  /*Reset des marges sur figure*/
+  figure 	{ margin:0; }
+}

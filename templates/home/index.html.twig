@@ -9,56 +9,57 @@
     </figure> 
 </header>
 
-        <p>WordIn ce sont des évènements autour d'une seule passion :<br>
-         apprendre une langue en s'amusant!<br>
-        Tu peux créer un évènement en choisissant un lieu, une langue, un jeu,<br>
-         une date et une durée ou t'inscrire sur un déjà planifié!</p>
+    <p>WordIn ce sont des évènements autour d'une seule passion :<br>
+        apprendre une langue en s'amusant!<br>
+    Tu peux créer un évènement en choisissant un lieu, une langue, un jeu,<br>
+        une date et une durée ou t'inscrire sur un déjà planifié!</p>
+
+
+    <h1>Les évènements</h1>
+        <div class='calendar'>
+            <figure>
+                <a href="{{ path('app_event') }}" ><img src="{{ asset('img/calendrier.jpg')}}" alt="Image d'un calendrier cliquable"></a>
+            </figure>
+        </div>
+
+    <h1>Les lieux</h1>
+        <div class='place'>
+            <figure>
+                <a href="{{ path('app_place') }}" ><img src="{{ asset('img/lartichaut.jpeg')}}" alt="Image façade café L'artichaut"></a>
+            </figure> 
+            <figure>
+                <a href="{{ path('app_place') }}" ><img src="{{ asset('img/philibar.jpg')}}" alt="Image façade café Philibar"></a>
+            </figure> 
+            <figure>
+                <a href="{{ path('app_place') }}" ><img src="{{ asset('img/wxyz.jpg')}}" alt="Image façade café Wxyz"></a>
+            </figure>
+        </div>
+
+    <h1>Les langues</h1>
+        <div class='drapeau'>
+            <figure>
+                <a href="{{ path('app_language') }}" ><img src="{{ asset('img/france.jpeg')}}" alt="Drapeau français"><figcaption>Français</figcaption></a>
+            </figure>
+            <figure>
+                <a href="{{ path('app_language') }}" ><img src="{{ asset('img/anglais.jpeg')}}" alt="Drapeau anglais"><figcaption>Anglais</figcaption></a>
+            </figure> 
+            <figure>
+                <a href="{{ path('app_language') }}" ><img src="{{ asset('img/lds.png')}}" alt="Drapeau langue des signes"><figcaption>Langue des signes</figcaption></a>
+            </figure> 
+            <figure>
+                <a href="{{ path('app_language') }}" ><img src="{{ asset('img/programmation.jpeg')}}" alt="Drapeau programmation"><figcaption>Programmation</figcaption></a>
+            </figure>
+            <figure>
+                <a href="{{ path('app_language') }}" ><img src="{{ asset('img/allemand.jpeg')}}" alt="Drapeau allemand"><figcaption>Allemand</figcaption></a>
+            </figure> 
+            <figure>
+                <a href="{{ path('app_language') }}" ><img src="{{ asset('img/espagnol.jpeg')}}" alt="Drapeau espagnol"><figcaption>Espagnol</figcaption></a>
+            </figure> 
+            <figure>
+                <a href="{{ path('app_language') }}" ><img src="{{ asset('img/italien.png')}}" alt="Drapeau italien"><figcaption>Italien</figcaption></a>
+            </figure>
+        </div>
   
-
-        <h1>Les évènements</h1>
-    <div class='calendar'>
-    <figure>
-        <a href="{{ path('app_event') }}" ><img src="{{ asset('img/calendrier.jpg')}}" alt="Image d'un calendrier cliquable"></a>
-    </figure>
-    </div>
-
-        <h1>Les lieux</h1>
-    <div class='place'>
-    <figure>
-        <a href="{{ path('app_place') }}" ><img src="{{ asset('img/lartichaut.jpeg')}}" alt="Image façade café L'artichaut">
-    </figure> 
-    <figure>
-        <a href="{{ path('app_place') }}" ><img src="{{ asset('img/philibar.jpg')}}" alt="Image façade café Philibar">
-    </figure> 
-    <figure>
-        <a href="{{ path('app_place') }}" ><img src="{{ asset('img/wxyz.jpg')}}" alt="Image façade café Wxyz">
-    </figure>
-    </div>
-
-        <h1>Les langues</h1>
-    <div class='drapeau'>
-        <figure>
-            <a href="{{ path('app_language') }}" ><img src="{{ asset('img/france.jpeg')}}" alt="Drapeau français">
-        </figure>
-        <figure>
-            <a href="{{ path('app_language') }}" ><img src="{{ asset('img/anglais.jpeg')}}" alt="Drapeau anglais">
-        </figure> 
-        <figure>
-            <a href="{{ path('app_language') }}" ><img src="{{ asset('img/lds.png')}}" alt="Drapeau langue des signes">
-        </figure> 
-        <figure>
-            <a href="{{ path('app_language') }}" ><img src="{{ asset('img/programmation.jpeg')}}" alt="Drapeau programmation">
-        </figure>
-        <figure>
-            <a href="{{ path('app_language') }}" ><img src="{{ asset('img/allemand.jpeg')}}" alt="Drapeau allemand">
-        </figure> 
-        <figure>
-            <a href="{{ path('app_language') }}" ><img src="{{ asset('img/espagnol.jpeg')}}" alt="Drapeau espagnol">
-        </figure> 
-        <figure>
-            <a href="{{ path('app_language') }}" ><img src="{{ asset('img/italien.png')}}" alt="Drapeau italien">
-        </figure>
-    </div>
 
 <main>
 
